@@ -45,6 +45,45 @@ public class Game extends World
         setPaintOrder(Pixel.class);
     }
     
+    public Game(boolean load)
+    {    
+        super(1200, 600, 1);
+        
+        if(load)
+        {
+            try
+            {
+                cube1Font = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/cube1.ttf"));
+                fregFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/freg.ttf"));
+                fthinFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/fthin.ttf"));
+                elabFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/elab.ttf"));
+                tinyFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/tiny.ttf"));
+            }
+            catch(IOException e)
+            {
+                cube1Font = new Font(Font.SERIF, Font.PLAIN, 50);
+                fregFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                fthinFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                elabFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                tinyFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                System.out.println("GAH! IT BROKE!");
+            }
+            catch(FontFormatException e)
+            {
+                cube1Font = new Font(Font.SERIF, Font.PLAIN, 50);
+                fregFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                fthinFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                elabFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                tinyFont = new Font(Font.SERIF, Font.PLAIN, 50);
+                System.out.println("GAH! IT BROKE!");
+            }
+        }
+        
+        colorChangeRate = 1;
+        
+        setPaintOrder(Pixel.class);
+    }
+    
     public void act()
     {
         for(int x = 0; x < colorChangeRate; x++)
@@ -140,6 +179,11 @@ public class Game extends World
         {
             inverse2Color = inverseColor.brighter().brighter();
         }
+    }
+    
+    public Color inverse(Color color)
+    {
+        return new Color(color.getRed(), color.getBlue(), color.getGreen());
     }
     
     public void control() {}

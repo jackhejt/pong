@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.params=
-comment0.target=Title()
+comment0.target=Menu()
 comment1.params=load
-comment1.target=Title(boolean)
+comment1.target=Menu(boolean)
 comment2.params=
-comment2.target=void\ setup()
+comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ behavior()
 comment4.params=
-comment4.target=void\ mouseControl()
+comment4.target=void\ keyboardControl()
 comment5.params=
-comment5.target=void\ redraw()
+comment5.target=void\ mouseControl()
 numComments=6

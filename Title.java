@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
 import java.awt.Color;
 
-public class Title extends Game
+public class Title extends Menu
 {
     GreenfootImage background;
     
@@ -10,6 +10,19 @@ public class Title extends Game
     
     public Title()
     {
+        setup();
+    }
+    
+    public Title(boolean load)
+    {
+        super(load);
+        setup();
+    }
+    
+    public void setup()
+    {
+        numMenuPos = 4;
+        
         background = new GreenfootImage(getBackground());
         
         r = Greenfoot.getRandomNumber(256);
@@ -23,11 +36,13 @@ public class Title extends Game
         redraw();
     }
     
-    public void control()
+    public void behavior()
     {
         addObject(new Pixel(), Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(100) + 25);
-        addObject(new Pixel(), Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(100) + 25);
-        
+    }
+    
+    public void mouseControl()
+    {
         if(Greenfoot.mouseClicked(null))
         {
             mouse = Greenfoot.getMouseInfo();
@@ -50,6 +65,10 @@ public class Title extends Game
         // Fill background
         background.setColor(mainColor);
         background.fill();
+        
+        // Draw cursor
+        background.setColor(inverse(inverse2Color));
+        background.fillRect(650, 100 + (menuPos * 100), 600, 100);
         
         // Draw menu options
         background.setColor(inverse2Color);
