@@ -20,6 +20,20 @@ public class Particle extends GameObject
         setImage(image);
     }
     
+    public Particle(int direction, int speed, int decay)
+    {
+        this.decay = decay;
+        
+        this.width = Greenfoot.getRandomNumber(5) + 1;
+        this.height = Greenfoot.getRandomNumber(5) + 1;
+        this.speed = Greenfoot.getRandomNumber(10) + speed;
+        this.direction = direction;
+        
+        image = new GreenfootImage(width, height);
+        image.fill();
+        setImage(image);
+    }
+    
     public Particle(int direction, int speed)
     {
         this.decay = Greenfoot.getRandomNumber(5) + 3;

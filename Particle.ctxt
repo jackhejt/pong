@@ -1,12 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Particle()
-comment1.params=direction\ speed
-comment1.target=Particle(int,\ int)
-comment2.params=
-comment2.target=void\ act()
+comment1.params=direction\ speed\ decay
+comment1.target=Particle(int,\ int,\ int)
+comment2.params=direction\ speed
+comment2.target=Particle(int,\ int)
 comment3.params=
-comment3.target=void\ movement()
+comment3.target=void\ act()
 comment4.params=
-comment4.target=void\ die()
-numComments=5
+comment4.target=void\ movement()
+comment5.params=
+comment5.target=void\ die()
+numComments=6

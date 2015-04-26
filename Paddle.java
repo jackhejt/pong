@@ -116,11 +116,11 @@ public class Paddle extends GameObject
     {
         if(front == 180)
         {
-            return front - dy;
+            return front - (dy * 2) + (Greenfoot.getRandomNumber(21) - 10);
         }
         else
         {
-            return front + dy;
+            return front + (dy * 2) + (Greenfoot.getRandomNumber(21) - 10);
         }
     }
 }
